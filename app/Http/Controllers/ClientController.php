@@ -17,6 +17,11 @@ class ClientController extends Controller
         return $post->json();
     }
     
+        function index(){
+            $collection = Http::get("https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=2");
+            return view('manufacturers',['collection'=>$collection['Results']]);
+        }
+    
         
     
 }

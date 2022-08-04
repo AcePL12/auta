@@ -17,6 +17,7 @@ use App\Http\Controllers\ClientController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/manufacturers', [ClientController::class,'getallPost'])->name('posts.getallpost');
+Route::get('test/manufacturers', [ClientController::class,'getallPost'])->name('posts.getallpost');
 
-Route::get('/manufacturers/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
+Route::get('test/manufacturers/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
+Route::get("/manufacturers", [ClientController::class,'index']);
