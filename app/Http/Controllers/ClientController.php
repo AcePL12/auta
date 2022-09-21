@@ -22,6 +22,9 @@ class ClientController extends Controller
             return view('manufacturers',['collection'=>$collection['Results']]);
         }
     
-        
+        function options(){
+            $collection = Http::get("https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=2");
+            return view('vehicles',['collection'=>$collection['Results']]);
+        }
     
 }

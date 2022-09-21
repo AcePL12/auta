@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Models\auta;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,22 @@ use App\Http\Controllers\ClientController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('test/manufacturers', [ClientController::class,'getallPost'])->name('posts.getallpost');
 
 Route::get('test/manufacturers/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
 Route::get("/manufacturers", [ClientController::class,'index']);
+Route::get("/", [ClientController::class,'options','country']);
+
+
+Route::post('/', function() {
+    auta::create([
+        'Country'=>request('Country'),
+        'Mfr_CommonName'=>request('Mfr_CommonName'),
+        "Mfr_ID"=>request("Mfr_ID"),
+        "Mfr_Name"=>request("Mfr_Name"),
+        "Vehicle registration number"=>request("Vehicle_registration_number"),
+
+    ]);
+    return redirect('/');
+});
