@@ -3,7 +3,7 @@
 </head>
 <body>
     <?php
-    var_dump($results);
+    
     ?>
     
     <form method="POST" action="./">
