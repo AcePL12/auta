@@ -24,7 +24,15 @@ class ClientController extends Controller
     
         function options(){
             $collection = Http::get("https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=2");
-            return view('vehicles',['collection'=>$collection['Results']]);
+
+            $countries = array_unique(array_column($collection['Results'], 'Country'));
+            $Mfr_CommonName = array_unique(array_column($collection['Results'], 'Mfr_CommonName'));
+            $Mfr_Name = array_unique(array_column($collection['Results'], 'Mfr_Name'));
+            $Mfr_ID = array_unique(array_column($collection['Results'], 'Mfr_ID'));
+
+            
+
+            return view('vehicles',['collection'=>$collection['Results'], 'countries'=>$countries, 'Mfr_CommonName'=>$Mfr_CommonName, 'Mfr_Name'=>$Mfr_Name, 'Mfr_ID'=>$Mfr_ID]);
         }
     
 }

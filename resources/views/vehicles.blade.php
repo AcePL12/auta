@@ -20,24 +20,24 @@
 <hr>
         <label for="Mfr_CommonName">Mfr_CommonName</label>
         <select name='Mfr_CommonName' id="Mfr_CommonName">
-        @foreach($collection as $item)
-            <option value="{{$item['Mfr_CommonName']}}">{{$item['Mfr_CommonName']}}</option>
+        @foreach($Mfr_CommonName as $item)
+            <option value="{{$item}}">{{$item}}</option>
             @endforeach
             </select>
             <br>
 <hr>
             <label for="Mfr_ID">Mfr_ID</label>
         <select name='Mfr_ID' id="Mfr_ID">
-        @foreach($collection as $item)
-            <option value="{{$item['Mfr_ID']}}">{{$item['Mfr_ID']}}</option>
+        @foreach($Mfr_ID as $item)
+            <option value="{{$item}}">{{$item}}</option>
             @endforeach
             </select>
             <br>
 <hr>
             <label for="Mfr_Name">Mfr_Name</label>
         <select name='Mfr_Name' id="Mfr_Name">
-        @foreach($collection as $item)
-            <option value="{{$item['Mfr_Name']}}">{{$item['Mfr_Name']}}</option>
+        @foreach($Mfr_Name as $item)
+            <option value="{{$item}}">{{$item}}</option>
             @endforeach
             </select>
             <br>
