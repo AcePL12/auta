@@ -12,8 +12,8 @@
 <hr>
         <label for="Country">Country</label>
         <select name='Country' id="Country">
-        @foreach($collection as $item)
-            <option value="{{$item['Country']}}">{{$item['Country']}}</option>
+        @foreach($countries as $item)
+            <option value="{{$item}}">{{$item}}</option>
             @endforeach
         </select>
         <br>
